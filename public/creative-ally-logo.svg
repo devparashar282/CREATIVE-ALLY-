@@ -1,0 +1,36 @@
+<svg width="940" height="940" viewBox="0 0 940 940" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="940" height="940" rx="64" fill="#060C17"/>
+  <defs>
+    <linearGradient id="bulb" x1="120" y1="180" x2="430" y2="560" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#28D5E8"/>
+      <stop offset="1" stop-color="#0AA0B8"/>
+    </linearGradient>
+    <linearGradient id="ally" x1="500" y1="620" x2="820" y2="760" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF8E73"/>
+      <stop offset="1" stop-color="#FF6C93"/>
+    </linearGradient>
+    <linearGradient id="creative" x1="510" y1="430" x2="860" y2="430" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2CD7E9"/>
+      <stop offset="1" stop-color="#11A7C7"/>
+    </linearGradient>
+  </defs>
+
+  <path d="M250 628C250 565 268 523 297 480C332 428 355 380 355 321C355 213 270 128 162 128C54 128 -31 213 -31 321C-31 380 -8 428 27 480C56 523 74 565 74 628" transform="translate(175 95)" stroke="url(#bulb)" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M192 588C192 661 150 698 74 699" transform="translate(175 95)" stroke="url(#bulb)" stroke-width="20" stroke-linecap="round"/>
+  <circle cx="282" cy="495" r="26" fill="#17B4CC"/>
+
+  <path d="M196 548C227 548 254 563 272 587C290 563 317 548 348 548V624C317 624 290 640 272 664C254 640 227 624 196 624V548Z" fill="#1AB7CE"/>
+  <path d="M272 587V664" stroke="#E5FBFF" stroke-width="6" stroke-linecap="round"/>
+
+  <ellipse cx="232" cy="384" rx="54" ry="69" fill="#FFD028"/>
+  <ellipse cx="332" cy="384" rx="54" ry="69" fill="#FFD028"/>
+  <path d="M232 344C244 350 250 364 247 378C244 391 234 402 222 406" stroke="#0A202D" stroke-width="7" stroke-linecap="round"/>
+  <path d="M202 359C191 369 190 384 201 395" stroke="#0A202D" stroke-width="7" stroke-linecap="round"/>
+  <path d="M332 344C320 350 314 364 317 378C320 391 330 402 342 406" stroke="#0A202D" stroke-width="7" stroke-linecap="round"/>
+  <path d="M362 359C373 369 374 384 363 395" stroke="#0A202D" stroke-width="7" stroke-linecap="round"/>
+
+  <path d="M282 315V454" stroke="#0A202D" stroke-width="9" stroke-linecap="round"/>
+
+  <text x="438" y="520" fill="url(#creative)" font-family="Sora, Segoe UI, sans-serif" font-size="128" font-weight="700" letter-spacing="8">CREATIVE</text>
+  <text x="455" y="690" fill="url(#ally)" font-family="Brush Script MT, Segoe Script, cursive" font-size="178" font-weight="400">Ally</text>
+</svg>
