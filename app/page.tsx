@@ -10,40 +10,87 @@ export default async function HomePage() {
 
   const featuredCourses = courses.slice(0, 6);
   const featuredInternships = internships.slice(0, 4);
+  const impactPoints = [
+    "Mentor-led studio sessions every week",
+    "Portfolio projects reviewed by practitioners",
+    "Internships aligned with current hiring stacks",
+    "Certification + placement preparation support"
+  ];
+  const learningJourney = [
+    {
+      title: "Foundation Sprint",
+      detail: "Clear fundamentals with guided labs and check-ins."
+    },
+    {
+      title: "Build Mode",
+      detail: "You ship portfolio-grade work with mentor feedback loops."
+    },
+    {
+      title: "Career Launch",
+      detail: "Interview prep, polished profiles, and proof-of-skill outcomes."
+    }
+  ];
 
   return (
-    <main className="container">
-      <section className="hero">
-        <div>
-          <h1>Build Future-Ready Skills with Creative Ally</h1>
+    <main className="container home-unique">
+      <section className="hero hero-shell">
+        <div className="hero-copy">
+          <p className="hero-kicker">Project-First Learning Studio</p>
+          <h1>Learn Like a Team. Build Like a Pro.</h1>
           <p className="lead">
-            Internship and certification programs in web, programming, design, and AI. Learn from mentors, work on real
-            projects, and build a career-ready portfolio.
+            Creative Ally blends internships and certification programs across web, programming, design, and AI so
+            students graduate with real projects, practical confidence, and interview-ready proof of work.
           </p>
-          <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
+          <div className="hero-actions">
             <Link href="/courses" className="btn">Explore Courses</Link>
             <Link href="/internships" className="btn btn-outline">Explore Internships</Link>
             <Link href="/contact" className="btn btn-outline">Book Counseling</Link>
           </div>
-          <section className="grid" style={{ marginTop: 14 }}>
-            <article className="card"><h3>10+</h3><p className="small">Industry courses</p></article>
-            <article className="card"><h3>7+</h3><p className="small">Practical internships</p></article>
-            <article className="card"><h3>100%</h3><p className="small">Certificate support</p></article>
-          </section>
+          <div className="hero-stat-row">
+            <article className="card">
+              <h3>10+</h3>
+              <p className="small">Industry courses</p>
+            </article>
+            <article className="card">
+              <h3>7+</h3>
+              <p className="small">Practical internships</p>
+            </article>
+            <article className="card">
+              <h3>100%</h3>
+              <p className="small">Certification guidance</p>
+            </article>
+          </div>
         </div>
 
-        <div className="hero-media-grid">
-          <img
-            src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80"
-            alt="Students learning technology"
-            className="hero-media"
-          />
-          <img
-            src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80"
-            alt="Mentor-led workshop"
-            className="hero-media"
-          />
+        <div className="hero-stage card">
+          <div className="hero-stage-head">
+            <p className="small">Inside Creative Ally</p>
+            <h3>Skill Track + Live Execution</h3>
+          </div>
+          <div className="hero-media-grid">
+            <img
+              src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80"
+              alt="Students learning technology"
+              className="hero-media"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80"
+              alt="Mentor-led workshop"
+              className="hero-media"
+            />
+          </div>
+          <div className="hero-stage-list">
+            {impactPoints.slice(0, 3).map((point) => (
+              <p key={point} className="small">{point}</p>
+            ))}
+          </div>
         </div>
+      </section>
+
+      <section className="impact-strip card" aria-label="Creative Ally highlights">
+        {impactPoints.map((point) => (
+          <p key={point} className="small">{point}</p>
+        ))}
       </section>
 
       <section style={{ marginTop: 24 }}>
@@ -100,6 +147,22 @@ export default async function HomePage() {
               </article>
             );
           })}
+        </section>
+      </section>
+
+      <section style={{ marginTop: 24 }}>
+        <div className="section-head">
+          <h2>Your Learning Journey</h2>
+          <p className="small">A clearer path from beginner to hired candidate.</p>
+        </div>
+        <section className="grid pathway-grid">
+          {learningJourney.map((step, index) => (
+            <article className="card pathway-card" key={step.title}>
+              <p className="pathway-index">{`0${index + 1}`}</p>
+              <h3>{step.title}</h3>
+              <p className="small">{step.detail}</p>
+            </article>
+          ))}
         </section>
       </section>
 

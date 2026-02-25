@@ -29,7 +29,10 @@ export async function connectDb() {
   if (cached.conn) return cached.conn;
 
   if (!cached.promise) {
-    cached.promise = mongoose.connect(mongoUri, { dbName: "creative-ally" });
+    cached.promise = mongoose.connect(mongoUri, {
+      dbName: "creative-ally",
+      serverSelectionTimeoutMS: 5000
+    });
   }
 
   cached.conn = await cached.promise;

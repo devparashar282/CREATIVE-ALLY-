@@ -3,8 +3,8 @@ import Link from "next/link";
 const quickLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
-  { href: "/courses", label: "Course" },
-  { href: "/internships", label: "Internship" },
+  { href: "/courses", label: "Courses" },
+  { href: "/internships", label: "Internships" },
   { href: "/contact", label: "Contact Us" }
 ];
 
@@ -62,7 +62,7 @@ export default function SiteFooter() {
 
       <div className="site-footer-bottom">
         <div className="container small">
-          {`© ${currentYear} Creative Ally. All rights reserved.`}
+          {`Copyright ${currentYear} Creative Ally. All rights reserved.`}
         </div>
       </div>
     </footer>

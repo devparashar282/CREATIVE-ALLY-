@@ -11,7 +11,8 @@ export default function Navbar() {
     <header className="nav">
       <div className="nav-inner">
         <Link href="/" className="brand" aria-label="Creative Ally Home">
-          Creative Ally
+          <span className="brand-mark" aria-hidden>CA</span>
+          <span>Creative Ally</span>
         </Link>
         <nav className="nav-links">
           <Link href="/about">About</Link>

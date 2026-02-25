@@ -9,18 +9,26 @@ export async function GET() {
   const guard = await requireUser();
   if ("error" in guard) return guard.error;
 
-  await connectDb();
   const userId = (guard.session.user as any).id;
-  const user: any = await User.findById(userId).lean();
-  const enrollments = await Enrollment.find({ userId }).sort({ enrolledAt: -1 }).lean();
-  const payments = await Payment.find({ userId }).sort({ createdAt: -1 }).lean();
+  let user: any = null;
+  let enrollments: any[] = [];
+  let payments: any[] = [];
+
+  try {
+    await connectDb();
+    user = await User.findById(userId).lean();
+    enrollments = await Enrollment.find({ userId }).sort({ enrolledAt: -1 }).lean();
+    payments = await Payment.find({ userId }).sort({ createdAt: -1 }).lean();
+  } catch (error) {
+    console.error("Dashboard API fallback mode: DB unavailable", error);
+  }
 
   return NextResponse.json({
     user: {
-      name: user?.name,
-      email: user?.email,
-      phone: user?.phone,
-      countryCode: user?.countryCode,
+      name: user?.name || guard.session.user.name,
+      email: user?.email || guard.session.user.email,
+      phone: user?.phone || (guard.session.user as any).phone,
+      countryCode: user?.countryCode || (guard.session.user as any).countryCode,
       imageUrl: user?.imageUrl
     },
     enrollments,
